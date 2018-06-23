@@ -1,0 +1,96 @@
+<form [formGroup]="form">
+    <mat-card fxLayout="column">
+        <mat-card-title>
+            Cadastro Cliente
+        </mat-card-title>
+        <mat-card-content fxFlex="100%">
+            <div fxLayout="column">
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Nome" [(ngModel)]="pessoa.nome" formControlName="nome" />
+                        <mat-error *ngIf="form.controls['nome'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Fantasia" [(ngModel)]="pessoa.fantasia" formControlName="fantasia" />
+                        <mat-error *ngIf="form.controls['fantasia'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="CPF/CNPJ" [(ngModel)]="pessoa.cpf" formControlName="cpf" />
+                        <mat-error *ngIf="form.controls['cpf'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="RG" [(ngModel)]="pessoa.rg" formControlName="rg" />
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="CEP" [(ngModel)]="pessoa.cep" formControlName="cep" />
+                        <mat-error *ngIf="form.controls['cep'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Celular" [(ngModel)]="pessoa.celular" formControlName="celular" />
+                        <mat-error *ngIf="form.controls['celular'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Telefone" [(ngModel)]="pessoa.telefone" formControlName="telefone" />
+                        <mat-error *ngIf="form.controls['telefone'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput [matDatepicker]="dataNascimento" placeholder="Data Nascimento" formControlName="dataNascimento" />
+                        <mat-datepicker-toggle matSuffix [for]="dataNascimento"></mat-datepicker-toggle>
+                        <mat-datepicker #dataNascimento></mat-datepicker>
+                        <mat-error *ngIf="form.controls['dataNascimento'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="E-mail" [(ngModel)]="pessoa.email" formControlName="email" />
+                        <mat-error *ngIf="form.controls['email'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Estado" [(ngModel)]="pessoa.estado" formControlName="estado" />
+                        <mat-error *ngIf="form.controls['estado'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Cidade" [(ngModel)]="pessoa.cidade" formControlName="cidade" />
+                        <mat-error *ngIf="form.controls['cidade'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Bairro" [(ngModel)]="pessoa.bairro" formControlName="bairro" />
+                        <mat-error *ngIf="form.controls['bairro'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Rua" [(ngModel)]="pessoa.rua" formControlName="rua" />
+                        <mat-error *ngIf="form.controls['rua'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Número" [(ngModel)]="pessoa.numero" formControlName="numero" />
+                        <mat-error *ngIf="form.controls['numero'].hasError('required')">Campo obrigatório</mat-error>
+                    </mat-form-field>
+                    <span fxFlex="2%"></span>
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Complemento" [(ngModel)]="pessoa.complemento" formControlName="complemento" />
+                    </mat-form-field>
+                </div>
+                <mat-card-actions>
+                <div>
+                    <button color="primary" (click)="salvar()" mat-button>Salvar</button>
+                </div>
+            </mat-card-actions>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

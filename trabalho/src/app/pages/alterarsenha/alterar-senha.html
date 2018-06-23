@@ -1,0 +1,44 @@
+<form [formGroup]="form">
+    <mat-card fxLayout="column">
+        <mat-card-title>
+            Alteração de Senha
+        </mat-card-title>
+        <mat-card-subtitle>
+            Informe os dados para a alteração da senha
+        </mat-card-subtitle>
+        <mat-card-content fxFlex="100%">
+            <div fxLayout="column">
+                <div fxLayout="row" >
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Usuario" [(ngModel)]="pessoa.login" formControlName="login"/>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Senha atual" [(ngModel)]="pessoa.senha" formControlName="senhaAtual"/>
+                        <mat-error *ngIf="form.controls['senhaAtual'].hasError('required')">Campo obrigatorio</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Nova senha" [(ngModel)]="pessoa.novaSenha" formControlName="novaSenha"/>
+                        <mat-error *ngIf="form.controls['novaSenha'].hasError('required')">Campo obrigatorio</mat-error>
+                        <mat-error *ngIf="form.controls['novaSenha'].hasError('minlength')">Minimo 6 caracteres</mat-error>
+                        <mat-error *ngIf="form.controls['novaSenha'].hasError('maxlength')">Máximo 50 caracteres</mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row">
+                    <mat-form-field fxFlex="100%">
+                        <input matInput placeholder="Confirmar senha" [(ngModel)]="pessoa.confirmeSenha" formControlName="confirmeSenha"
+                        />
+                        <mat-error *ngIf="form.controls['confirmeSenha'].hasError('required')">Campo obrigatorio</mat-error>
+                        <mat-hint *ngIf="form.controls['confirmeSenha'].errors?.equalTo && form.controls['confirmeSenha'].touched">Senhas não conferem</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button color="primary" (click)="alterar()" mat-button>Alterar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

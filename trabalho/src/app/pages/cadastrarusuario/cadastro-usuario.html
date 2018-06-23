@@ -1,0 +1,73 @@
+<form [formGroup]="form" id="conteudo">
+<mat-tab-group>
+    <mat-tab label="Usuario">
+        <div fxLayout="column">
+            <div fxLayout="row">
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Nome" [(ngModel)]="pessoa.nome" formControlName="nome" />
+                    <mat-error *ngIf="form.controls['nome'].hasError('required')"></mat-error>
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="CPF" [(ngModel)]="pessoa.cpf" formControlName="cpf" />
+                    <mat-error *ngIf="form.controls['cpf'].hasError('required')"></mat-error>
+                </mat-form-field>
+            </div> 
+            <div fxLayout="row">
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="E-mail" [(ngModel)]="pessoa.email" formControlName="email" />
+                    <mat-error *ngIf="form.controls['email'].hasError('required')"></mat-error>
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Login" [(ngModel)]="pessoa.login" formControlName="login" />
+                    <mat-error *ngIf="form.controls['login'].hasError('required')"></mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Senha" [(ngModel)]="pessoa.senha" formControlName="senha" />
+                    <mat-error *ngIf="form.controls['senha'].hasError('required')"></mat-error>
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Confirme a senha" [(ngModel)]="pessoa.confirmeSenha" formControlName="confirmeSenha"
+                    />
+                    <mat-error *ngIf="form.controls['confirmeSenha'].hasError('required')"></mat-error>
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Apelido" [(ngModel)]="pessoa.apelido" formControlName="apelido" />
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Telefone" [(ngModel)]="pessoa.telefone" formControlName="telefone" />
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Celular" [(ngModel)]="pessoa.celular" formControlName="celular"/>
+                </mat-form-field>
+                <span fxFlex="5%"></span>
+                <mat-form-field fxFlex="100%">
+                    <input matInput placeholder="Grupo Usuario" [(ngModel)]="pessoa.grupoUsuario" formControlName="grupoUsuario" />
+                    <mat-error *ngIf="form.controls['grupoUsuario'].hasError('required')"></mat-error>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row">
+                <mat-checkbox>Ativo</mat-checkbox>
+            </div>
+            <div>
+                <button class="btn" color="primary" (click)="salvar()" mat-button>Salvar</button>  
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Descrição">
+        <div fxLayout="row">
+            <mat-form-field fxFlex="100%">
+                <input matInput placeholder="Descrição" [(ngModel)]="pessoa.descricao" formControlName="descricao" />
+            </mat-form-field>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+</form>
